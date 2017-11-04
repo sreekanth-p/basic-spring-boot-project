@@ -8,3 +8,5 @@ Added Comment 2
 
 TEST_TABLE
 id, firstname, lastname, email
+
+Added new Line
