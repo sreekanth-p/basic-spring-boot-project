@@ -13,26 +13,24 @@ import me.sreekanth.dao.PersonalDAO;
 @EnableAutoConfiguration
 public class PersonalController {
 	
-		@Value("${app.config.message}")
-		public String message;
-		
-		PersonalDAO personalDAO;
-		
-		@Autowired
-		public PersonalController(PersonalDAO personalDAO) {
-			this.personalDAO = personalDAO;
-		}
+	@Value("${app.config.message}")
+	public String message;
 
-	    @RequestMapping("/searchByEmail")
-	    public String index(@RequestParam("emailId") String emailId) {
-	        return personalDAO.getData(emailId);
-	    }
-	    
-	    @RequestMapping("/getMessage")
-	    public String test() {
-			return message;
-	    }
-	    
+	PersonalDAO personalDAO;
 
+	@Autowired
+	public PersonalController(PersonalDAO personalDAO) {
+		this.personalDAO = personalDAO;
+	}
+
+	@RequestMapping("/searchByEmail")
+	public String index(@RequestParam("emailId") String emailId) {
+	return personalDAO.getData(emailId);
+	}
+
+	@RequestMapping("/getMessage")
+	public String test() {
+		return message;
+	}    
 
 }
