@@ -1,0 +1,19 @@
+default:
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://
+  username: 
+  password: 
+  message: Hello World!
+
+spring:
+  datasource:
+    driver-class-name: ${vcap.services.mydb.credentials.driver-class-name:${default.driver-class-name}}
+    url: ${vcap.services.mydb.credentials.url:${default.url}}
+    username: ${vcap.services.mydb.credentials.username:${default.username}}
+    password: ${vcap.services.mydb.credentials.password:${default.password}}
+
+app:
+  config:
+    message: ${vcap.services.app.credentials.message:${default.message}}
+
+server.port: 8080

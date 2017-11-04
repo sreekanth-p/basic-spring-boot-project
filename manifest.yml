@@ -1,0 +1,9 @@
+applications:
+- name: Test Application
+  memory: 1024M
+  host: sampleapp-127247824 #Change Host name
+  domain: cfapps.io
+  path: target/web-1.0.jar
+  buildpack: "https://github.com/cloudfoundry/java-buildpack.git#v4.1"
+  services:
+  - mydb
