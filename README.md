@@ -2,7 +2,9 @@
 
 This project need a MySQL db with below tale
 
-Addeed Comment
+Added Comment
+
+Added Comment 2 
 
 TEST_TABLE
 id, firstname, lastname, email
